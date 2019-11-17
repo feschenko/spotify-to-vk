@@ -4,7 +4,7 @@
 но в любом случае - капча вылетает через 30-60 минут.
 <hr>
 
-![Version 0.0.1 ](https://github.com/0susboy0/spotify-to-vk/blob/master/img/spotify.png)
+![Version 0.0.1 ](https://github.com/0gothboy0/spotify-to-vk/blob/master/img/spotify.png)
 
 ## Установка:
 
@@ -26,11 +26,11 @@ $ pip3 install -r requirements.txt
 
 ###### main.py
 *Чтобы включить оповещение о капче, раскомментируйте данный кусок кода.*
-![Version 0.0.1 ](https://github.com/0susboy0/spotify-to-vk/blob/master/img/code.png)
+![Version 0.0.1 ](https://github.com/0gothboy0/spotify-to-vk/blob/master/img/code.png)
 
 ###### .env
 *Для получения токенов можете ввести команду ниже или самостоятельно пройти по ссылкам в разделе FAQ.*
-![Version 0.0.1 ](https://github.com/0susboy0/spotify-to-vk/blob/master/img/config.png)
+![Version 0.0.1 ](https://github.com/0gothboy0/spotify-to-vk/blob/master/img/config.png)
 
 
 ```
