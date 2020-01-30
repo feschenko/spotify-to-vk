@@ -69,7 +69,7 @@ $ python3 main.py
 
 ## Автор:
 
-* **Kirill Feschenko** - [0susboy0](https://github.com/0susboy0) • [kiryssha.works](http://kiryssha.works)
+* **Kirill Feschenko** - [0susboy0](https://github.com/0susboy0) • [gothboy.me](http://gothboy.me)
 
 
 ## Благодарность:
