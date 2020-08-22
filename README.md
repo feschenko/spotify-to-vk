@@ -1,81 +1,79 @@
 <h1 align="center"> SpotifyToVk 🎵</h1>
-<p align="center">
-Из-за "особенностей" вк апи, невозможно делать запросы чаще 3 секунд,
-но в любом случае - капча вылетает через 30-60 минут.
 <hr>
 
-![Version 0.0.1 ](https://github.com/0gothboy0/spotify-to-vk/blob/master/img/spotify.png)
+![Version 1.0 ](img/spotify.png)
 
 ## Установка:
 
 
 ###### Скопируйте репозиторий используя git и перейдите в папку:
 
-```
-$ git clone https://github.com/0susboy0/spotify-to-vk.git
-$ cd spotify-to-vk
+```sh
+git clone https://github.com/mazzz3r/spotify-to-vk.git
+cd spotify-to-vk
 ```
 
 ###### Установите библиотеки используя pip:
 
-```
-$ pip3 install -r requirements.txt
+```sh
+pip3 install -r requirements.txt
 ```
 
 ## Настройка:
 
-###### main.py
-*Чтобы включить оповещение о капче, раскомментируйте данный кусок кода.*
-![Version 0.0.1 ](https://github.com/0gothboy0/spotify-to-vk/blob/master/img/code.png)
 
-###### .env
+###### Конфиг
 *Для получения токенов можете ввести команду ниже или самостоятельно пройти по ссылкам в разделе FAQ.*
-![Version 0.0.1 ](https://github.com/0gothboy0/spotify-to-vk/blob/master/img/config.png)
+![Version 1.0 ](img/config.png)
 
 
+```sh
+python3 first.py
 ```
-$ python3 first.py
 ```
+STANDART_STATUS - Ваш стандартный статус, который будет поставлен в случае ошибки
+STATUS - format строка, используется при выставлении статуса с помощью spotify
+    {artist} - имя артиста/название группы
+    {track} - названеие трека
+    {album} - название альбома
+    расставлять их можно в любом порядке, необязательно использовать все
+    (к примеру, можно не использовать название альбома)
 
+VK_TOKEN - Токен от страницы вк
+CLIENT_ID - айди приложения, которое вы создали в спотифай
+CLIENT_SECRET - секретный ключ этого приложения
+REDIRECT_URI - редирект ссылка, которую вы указали в созданном приложении
+USERNAME - имя пользователя в спотифай
+SCOPE - scope при запросе токена спотифай, уже указан, лучше не трогать
+```
 ## Запуск:
 
-```
-$ python3 main.py
+```sh
+python3 main.py
 ```
 
-## Часто задаваемые вопросы:
+## FAQ:
 
 1. **Используемые модули**:
-    - colorama (pip3 install colorama)
-    - random (already included in the distribution package)
-    - time (already included in the distribution package)
-    - vk_api (pip3 install vk_api)
-    - spotipy (pip3 install spotipy)
-    - re (already included in the distribution package)
-2. **Spotipy**
-    - [pypi.org](https://pypi.org/project/Pillow/)
-    - [github.com](https://github.com/plamere/spotipy)
-3. **Colorama**
-    - [pypi.org](https://pypi.org/project/colorama/)
-    - [github.com](https://github.com/tartley/colorama)
-4. **Tokens**
-    - [youtube.com](https://youtu.be/RuxZaDHeZpA)
-    - [vkhost.github.io](https://vkhost.github.io)
-    - [developer.spotify.com](https://developer.spotify.com)
-5. **git**
-    - [git-scm.com](http://git-scm.com)
+    - colorama
+    - - [pypi.org](https://pypi.org/project/Pillow/)
+    - - [github.com](https://github.com/plamere/spotipy)
+    - vk_api
+    - - [pypi.org](https://pypi.org/project/vk-api/)
+    - - [github.com](https://github.com/python273/vk_api)
+    - spotipy
+    - - [pypi.org](https://pypi.org/project/spotipy/)
+    - - [github.com](https://github.com/plamere/spotipy)
+2. **Конфиг:**
+    - [Детальная инструкция](installconfig.md)
+    - [Создание приложения для спотифай](https://developer.spotify.com/dashboard/)
+    - [Получение токена вк](https://oauth.vk.com/authorize?client_id=2685278&scope=1073737727&redirect_uri=https://oauth.vk.com/blank.html&display=page&response_type=token&revoke=1)
+3. **Что сделано в форке:**
+    - Оптимизировал код, теперь он не трогает статус, если играет тот же трек, что и 5 секунд назад
+    - Теперь токен от спотифая обновляется, а не вылетает
+    - Добавил конфиг для более простой установки
+    - Теперь к вк идет меньше запросов, в следствие чего, капча почти не вылетает
         
-
-
-## Автор:
-
-* **Kirill Feschenko** - [0susboy0](https://github.com/0susboy0) • [gothboy.me](http://gothboy.me)
-
-
-## Благодарность:
-* **Python273** - [python273](https://github.com/python273)
-* **Paul Lamere** - [plamere](https://github.com/plamere)
-## Список [контрибьюторов](https://github.com/0susboy0/spotify-to-vk/graphs/contributors), которые участвовали в этом проекте.
 
 
 
