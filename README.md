@@ -68,11 +68,9 @@ python3 main.py
     - [Детальная инструкция](installconfig.md)
     - [Создание приложения для спотифай](https://developer.spotify.com/dashboard/)
     - [Получение токена вк](https://oauth.vk.com/authorize?client_id=2685278&scope=1073737727&redirect_uri=https://oauth.vk.com/blank.html&display=page&response_type=token&revoke=1)
-3. **Что сделано в форке:**
-    - Оптимизировал код, теперь он не трогает статус, если играет тот же трек, что и 5 секунд назад
-    - Теперь токен от спотифая обновляется, а не вылетает
-    - Добавил конфиг для более простой установки
-    - Теперь к вк идет меньше запросов, в следствие чего, капча почти не вылетает
+
+
+### [Project contributors](https://github.com/xcaq/spotify-to-vk/graphs/contributors)
         
 
 

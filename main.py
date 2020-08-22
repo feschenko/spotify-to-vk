@@ -32,7 +32,6 @@ def set_standart_status():
         + f"// Используется стандартный статус юзера: // {Config.STANDART_STATUS} //"
     )
 
-
 def set_status():
     global last_track
     current_track = spotify.current_user_playing_track()
@@ -48,13 +47,12 @@ def set_status():
         print(Fore.GREEN + f"// Сейчас играет: // {track} // {album} // {artist} //")
 
 
-def main():
-    while True:
-        try:
-            set_status()
-        except Exception as e:
-            print(e)
-            set_standart_status()
-            time.sleep(100)
-        finally:
-            time.sleep(5)
+while True:
+    try:
+        set_status()
+    except Exception as e:
+        print(f"An error has occurred: {e}")
+        set_standart_status()
+        break
+    finally:
+        time.sleep(5)
