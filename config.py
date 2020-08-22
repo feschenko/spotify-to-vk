@@ -1,8 +1,11 @@
 import os
 
+
 class Config:
     STANDART_STATUS = os.getenv("STANDART_STATUS") or "Your Status"
-    STATUS = os.getenv("STATUS") or "⏯ ʟɪsᴛᴇɴɪɴɢ ᴏɴ sᴘᴏᴛɪꜰʏ: {track} - {artist} - {album}"
+    STATUS = (
+        os.getenv("STATUS") or "⏯ ʟɪsᴛᴇɴɪɴɢ ᴏɴ sᴘᴏᴛɪꜰʏ: {track} - {artist} - {album}"
+    )
     VK_TOKEN = os.getenv("VK_TOKEN") or "Your Token"
     CLIENT_ID = os.getenv("CLIENT_ID") or ""
     CLIENT_SECRET = os.getenv("CLIENT_SECRET") or ""

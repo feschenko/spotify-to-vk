@@ -1,9 +1,11 @@
+import time
+
 import spotipy
 import vk_api
-import time
-from colorama import Fore, Back, Style
-from config import Config
+from colorama import Back, Fore, Style
 from spotipy.oauth2 import SpotifyOAuth
+
+from config import Config
 
 vk = vk_api.VkApi(token=Config.VK_TOKEN).get_api()
 
@@ -19,32 +21,28 @@ spotify = spotipy.Spotify(
 
 last_track = (None, None, None)
 
+
 def set_standart_status():
-    user = vk.users.get(
-        fields="status"
-    )[0]
+    user = vk.users.get(fields="status")[0]
     if user["status"] == Config.STANDART_STATUS:
         return
-    vk.status.set(
-        text=Config.STANDART_STATUS
+    vk.status.set(text=Config.STANDART_STATUS)
+    print(
+        Fore.RED
+        + f"// Используется стандартный статус юзера: // {Config.STANDART_STATUS} //"
     )
-    print(Fore.RED + f"// Используется стандартный статус юзера: // {Config.STANDART_STATUS} //")
 
-    
+
 def set_status():
     global last_track
     current_track = spotify.current_user_playing_track()
-    track = current_track['item']['name']
-    album = current_track['item']['album']['name']
-    artist = current_track['item']['artists'][0]['name']
+    track = current_track["item"]["name"]
+    album = current_track["item"]["album"]["name"]
+    artist = current_track["item"]["artists"][0]["name"]
 
     if (track, album, artist) != last_track:
         vk.status.set(
-            text=Config.STATUS.format(
-                track = track,
-                album = album,
-                artist = artist,
-            )
+            text=Config.STATUS.format(track=track, album=album, artist=artist,)
         )
         last_track = (track, album, artist)
         print(Fore.GREEN + f"// Сейчас играет: // {track} // {album} // {artist} //")
