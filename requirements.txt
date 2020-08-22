@@ -1,4 +1,3 @@
-git+https://github.com/plamere/spotipy.git
+spotipy
 vk_api
 colorama
-python-dotenv
