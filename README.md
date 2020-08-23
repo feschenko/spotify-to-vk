@@ -22,9 +22,9 @@ $ pip3 install -r requirements.txt
 
 # Setting up:
 
-###### Config
+###### Fill in the config
 ![Version 1.0 ](img/config.png)
-###### For easily settings you can use the command below, or use links in the FAQ by yourself. 
+###### For easily setting you can use the command below, or use links in the FAQ by yourself. 
 
 ```bash
 $ python3 first.py
