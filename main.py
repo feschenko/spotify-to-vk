@@ -1,11 +1,12 @@
-import time
-
-import spotipy
-import vk_api
-from colorama import Back, Fore, Style
 from spotipy.oauth2 import SpotifyOAuth
+from typing import List
 
 from config import Config
+from colorama import Fore
+import spotipy
+import typing
+import vk_api
+import time
 
 vk = vk_api.VkApi(token=Config.VK_TOKEN).get_api()
 
@@ -19,45 +20,33 @@ spotify = spotipy.Spotify(
     )
 )
 
-last_track = (None, None, None)
+current_playing = typing.List[typing.Union[str, str, str]]
 
 
-def set_standart_status():
-    user = vk.users.get(fields="status")[0]
-    if user["status"] == Config.STANDART_STATUS:
-        return
-    vk.status.set(text=Config.STANDART_STATUS)
-    print(
-        Fore.RED
-        + f"// Используется стандартный статус юзера: // {Config.STANDART_STATUS} //"
-    )
+def update_status_to_standard():
+    if vk.users.get(fields="status")[0]["status"] != Config.STANDARD_STATUS:
+        vk.status.set(text=Config.STANDARD_STATUS)
+    print(Fore.RED + f"User status was changed to {Config.STANDARD_STATUS}")
 
-def set_status():
-    global last_track
-    current_track = spotify.current_user_playing_track()
 
-    if current_track is None:
-        set_standart_status()
-        return
-
-    track = current_track["item"]["name"]
-    album = current_track["item"]["album"]["name"]
-    artist = current_track["item"]["artists"][0]["name"]
-
-    if (track, album, artist) != last_track:
-        vk.status.set(
-            text=Config.STATUS.format(track=track, album=album, artist=artist,)
-        )
-        last_track = (track, album, artist)
-        print(Fore.GREEN + f"// Сейчас играет: // {track} // {album} // {artist} //")
+def update_status(_current_playing: typing.List[typing.Union[str, str, str]]
+                  ) -> typing.List[typing.Union[str, str, str]]:
+    current = spotify.current_user_playing_track()
+    track, album, artist = current["item"]["name"], \
+                           current["item"]["album"]["name"], \
+                           current["item"]["artists"][0]["name"]
+    if _current_playing != [track, album, artist]:
+        vk.status.set(text=Config.STATUS.format(track=track, album=album, artist=album))
+        print(Fore.GREEN + f"Now playing: * {track} * {album} * {artist}")
+    if _current_playing is None:
+        raise
+    return [track, album, artist]
 
 
 while True:
     try:
-        set_status()
-    except Exception as e:
-        print(f"An error has occurred: {e}")
-        set_standart_status()
-        break
-    finally:
+        current_playing = update_status(current_playing)
         time.sleep(5)
+    except (KeyboardInterrupt, SystemExit, Exception):
+        update_status_to_standard()
+        raise
