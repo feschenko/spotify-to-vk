@@ -35,6 +35,11 @@ def set_standart_status():
 def set_status():
     global last_track
     current_track = spotify.current_user_playing_track()
+
+    if current_track is None:
+        set_standart_status()
+        return
+
     track = current_track["item"]["name"]
     album = current_track["item"]["album"]["name"]
     artist = current_track["item"]["artists"][0]["name"]
