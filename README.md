@@ -2,7 +2,7 @@
 ### Display your current listen to a song from Spotify in the VK status.
 ![1.1](img/spotify.png)
 
-# Installation
+# Installation:
 
 ###### Clone repository
 ```bash
