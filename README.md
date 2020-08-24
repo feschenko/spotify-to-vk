@@ -55,7 +55,7 @@ $ python3 main.py
 
 
 # 🤝 Contributing
-#### Feel free to contribute. <a href="https://github.com/xcaq/spotify-to-vk/graphs/contributors" align=center>Project contributors</a>
+#### <a href="https://github.com/xcaq/spotify-to-vk/graphs/contributors" align=center>Feel free to contribute.</a>
         
 
 
