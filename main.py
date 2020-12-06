@@ -45,9 +45,20 @@ def set_status():
     artist = current_track["item"]["artists"][0]["name"]
 
     if (track, album, artist) != last_track:
-        vk.status.set(
-            text=Config.STATUS.format(track=track, album=album, artist=artist,)
+        r = vk.audio.search(
+            q=f"\"{track}\" \"{artist}\""
         )
+        if r['count'] == 0:
+            set_standart_status()
+            return
+        music = r['items'][0]
+
+        track_id = f"{music['owner_id']}_{music['id']}"
+
+        vk.audio.setBroadcast(audio=track_id)
+        #vk.status.set(
+        #    text=Config.STATUS.format(track=track, album=album, artist=artist,)
+        #)
         last_track = (track, album, artist)
         print(Fore.GREEN + f"// Сейчас играет: // {track} // {album} // {artist} //")
 
