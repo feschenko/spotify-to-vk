@@ -9,6 +9,6 @@ class Config:
     VK_TOKEN = os.getenv("VK_TOKEN") or ""
     CLIENT_ID = os.getenv("CLIENT_ID") or ""
     CLIENT_SECRET = os.getenv("CLIENT_SECRET") or ""
-    REDIRECT_URI = os.getenv("REDIRECT_URI") or ""
+    REDIRECT_URI = os.getenv("REDIRECT_URI") or "http://localhost:8888/callback"
     USERNAME = os.getenv("USERNAME") or "Username"
     SCOPE = os.getenv("SCOPE") or "user-read-playback-state user-library-read"
