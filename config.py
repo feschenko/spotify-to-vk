@@ -1,14 +1,9 @@
-import os
-
-
 class Config:
-    STANDART_STATUS = os.getenv("STANDART_STATUS") or "Your Status"
-    STATUS = (
-        os.getenv("STATUS") or "⏯ ʟɪsᴛᴇɴɪɴɢ ᴏɴ sᴘᴏᴛɪꜰʏ: {track} - {artist} - {album}"
-    )
-    VK_TOKEN = os.getenv("VK_TOKEN") or ""
-    CLIENT_ID = os.getenv("CLIENT_ID") or ""
-    CLIENT_SECRET = os.getenv("CLIENT_SECRET") or ""
-    REDIRECT_URI = os.getenv("REDIRECT_URI") or "http://localhost:8888/callback"
-    USERNAME = os.getenv("USERNAME") or "Username"
-    SCOPE = os.getenv("SCOPE") or "user-read-playback-state user-library-read"
+    STANDARD_STATUS = "_"
+    STATUS = "{track} - {artist} - {album}"  # Template for status text.
+    VK_TOKEN = ""  # Access token for VKontakte account.
+    CLIENT_ID = ""  # Client ID for spotify application.
+    CLIENT_SECRET = ""  # Client secret for spotify application.
+    REDIRECT_URI = "http://localhost:8888/callback"  # Redirect uri for spotify application.
+    USERNAME = ""  # Your name in spotify..
+    SCOPE = "user-read-playback-state user-library-read"  # Spotify scopes.
