@@ -67,12 +67,11 @@ python3 main.py
 2. **Конфиг:**
     - [Детальная инструкция](installconfig.md)
     - [Создание приложения для спотифай](https://developer.spotify.com/dashboard/)
-    - [Получение токена вк](https://oauth.vk.com/authorize?client_id=2685278&scope=1073737727&redirect_uri=https://oauth.vk.com/blank.html&display=page&response_type=token&revoke=1)
+    - [Получение токена вк](https://oauth.vk.com/authorize?client_id=6121396&scope=1073737727&redirect_uri=https://oauth.vk.com/blank.html&display=page&response_type=token&revoke=1)
 
 
 ### [Project contributors](https://github.com/xcaq/spotify-to-vk/graphs/contributors)
         
-
 
 
 
