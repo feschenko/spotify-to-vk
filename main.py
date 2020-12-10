@@ -19,7 +19,7 @@ current_playing = []
 def update_status_to_standard():
     if vk.status.get(user_id=user["id"]) != Config.STANDARD_STATUS:
         vk.status.set(text=Config.STANDARD_STATUS)
-        print(Fore.GREEN + "Your status was changed to a standard because of error.")
+        print(Fore.RED + "Your status was changed to a standard because of error.")
 
 
 def update_status(last_playing: list) -> list:
