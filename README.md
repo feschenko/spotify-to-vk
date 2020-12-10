@@ -55,7 +55,7 @@ $ python3 main.py
 
 
 # 🤝 Contributing:
-#### ❤️ Special thank to: <a href="https://github.com/MazZz3r">MazZz3r</a>.
+#### ❤️	&nbsp;Special thank to: <a href="https://github.com/MazZz3r">MazZz3r</a>.
 #### <a href="https://github.com/xcaq/spotify-to-vk/graphs/contributors" align=center>Feel free to contribute.</a>
 
 
