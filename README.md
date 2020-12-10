@@ -1,4 +1,4 @@
-# SpotifyToVK
+# Spotify to VK
 ### Display your current listen to a song from Spotify in the VK status.
 ![1.1](img/spotify.png)
 
@@ -54,14 +54,8 @@ $ python3 main.py
     - [Getting VKontakte token](https://oauth.vk.com/authorize?client_id=2685278&scope=1073737727&redirect_uri=https://oauth.vk.com/blank.html&display=page&response_type=token&revoke=1)
 
 
-# 🤝 Contributing
+# 🤝 Contributing:
+#### ❤️	&nbsp;Special thank to: <a href="https://github.com/MazZz3r">MazZz3r</a>.
 #### <a href="https://github.com/xcaq/spotify-to-vk/graphs/contributors" align=center>Feel free to contribute.</a>
-        
-
-
-
-
-
-
 
 
