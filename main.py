@@ -25,7 +25,7 @@ def update_status_to_standard():
 def update_status(last_playing: list) -> list:
     current_playing = spotify.current_user_playing_track()
 
-    if current_playing is not None:
+    if current_playing is None:
         update_status_to_standard()
         return []
 
@@ -45,6 +45,6 @@ def update_status(last_playing: list) -> list:
 while True:
     try:
         current_playing = update_status(current_playing)
-    except (KeyboardInterrupt, SystemExit, Exception):
+    except (KeyboardInterrupt, SystemExit):
         update_status_to_standard()
         raise
