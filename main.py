@@ -25,7 +25,7 @@ def update_status_to_standard():
 def update_status(last_playing: list) -> list:
     current_playing = spotify.current_user_playing_track()
 
-    if not current_playing:
+    if current_playing is not None:
         update_status_to_standard()
         return []
 
