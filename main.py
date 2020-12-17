@@ -45,7 +45,6 @@ def update_status(last_playing: list) -> list:
 while True:
     try:
         current_playing = update_status(current_playing)
-        time.sleep(0.5)
     except (KeyboardInterrupt, SystemExit, Exception):
         update_status_to_standard()
         raise
