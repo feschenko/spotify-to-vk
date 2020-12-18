@@ -17,7 +17,7 @@ current_playing = []
 
 
 def update_status_to_standard():
-    if vk.status.get(user_id=user["id"]) != Config.STANDARD_STATUS:
+    if vk.status.get(user_id=user["id"])["text"] != Config.STANDARD_STATUS:
         vk.status.set(text=Config.STANDARD_STATUS)
         print(Fore.RED + "Your status was changed to a standard because of error.")
 
@@ -27,19 +27,28 @@ def update_status(last_playing: list) -> list:
 
     if current_playing is None:
         update_status_to_standard()
-        return []
+        return current_playing
 
-    current_playing = [current_playing["item"]["name"], current_playing["item"]["album"]["name"],
-                       current_playing["item"]["artists"][0]["name"]]
-    if current_playing != last_playing:
-        search_result = vk.audio.search(q=f'{current_playing[0]} {current_playing[2]}')
-        if search_result["count"] == 0:
-            vk.status.set(text=Config.STATUS.format(track=current_playing[0], album=current_playing[1],
-                                                    artist=current_playing[2]))
-        else:
-            vk.audio.setBroadcast(audio=f"{search_result['items'][0]['owner_id']}_{search_result['items'][0]['id']}")
-        print(Fore.GREEN + f"Now playing: * {current_playing[0]} * {current_playing[1]} * {current_playing[2]}")
+    if current_playing["currently_playing_type"] != "ad":
+        if current_playing["is_playing"] is False:
+            update_status_to_standard()
+            return current_playing
+
+        current_playing = [current_playing["item"]["name"], current_playing["item"]["album"]["name"],
+                           current_playing["item"]["artists"][0]["name"]]
+
+        if current_playing != last_playing:
+            search_result = vk.audio.search(q=f'{current_playing[0]} {current_playing[2]}')
+            if search_result["count"] == 0:
+                vk.status.set(text=Config.STATUS.format(track=current_playing[0], album=current_playing[1],
+                                                        artist=current_playing[2]))
+            else:
+                vk.audio.setBroadcast(audio=f"{search_result['items'][0]['owner_id']}_{search_result['items'][0]['id']}")
+            print(Fore.GREEN + f"Now playing: * {current_playing[0]} * {current_playing[1]} * {current_playing[2]}")
+    else:
+        update_status_to_standard()
     return current_playing
+
 
 
 while True:
