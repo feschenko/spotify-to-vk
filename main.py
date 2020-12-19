@@ -38,7 +38,7 @@ def update_status(last_playing: list) -> list:
                            current_playing["item"]["artists"][0]["name"]]
 
         if current_playing != last_playing:
-            search_result = vk.audio.search(q=f'{current_playing[0]} {current_playing[2]}')
+            search_result = vk.audio.search(q=f"{current_playing[2]} {current_playing[0]}")
             if search_result["count"] == 0:
                 vk.status.set(text=Config.STATUS.format(track=current_playing[0], album=current_playing[1],
                                                         artist=current_playing[2]))
