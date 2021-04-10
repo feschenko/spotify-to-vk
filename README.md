@@ -2,6 +2,8 @@
 ### Display your current listen to a song from Spotify in the VK status.
 ![1.1](img/spotify.png)
 
+###### Also, if you need to transfer your VK songs to Spotify, try my other app — [SpotiTrans](https://github.com/feschenko/spotify-transfer).
+
 # Installation:
 
 ###### Clone repository
