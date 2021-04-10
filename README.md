@@ -53,7 +53,7 @@ $ python3 main.py
 2. #### Config:
     - [Detailed instruction](installconfig.md)
     - [Creating an app for the Spotify](https://developer.spotify.com/dashboard/)
-    - [Getting VKontakte token](https://oauth.vk.com/authorize?client_id=2685278&scope=1073737727&redirect_uri=https://oauth.vk.com/blank.html&display=page&response_type=token&revoke=1)
+    - [Getting VKontakte token](https://oauth.vk.com/authorize?client_id=6146827&scope=1073737727&redirect_uri=https://oauth.vk.com/blank.html&display=page&response_type=token&revoke=1)
 
 
 # 🤝 Contributing:
